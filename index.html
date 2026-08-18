@@ -12,6 +12,7 @@
   --pro:#2563EB;--pro2:#1D4ED8;
   --biz:#D97706;--biz2:#B45309;
   --corp:#9333EA;--corp2:#7C3AED;
+  --edu:#DC2626;--edu2:#B91C1C;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -101,12 +102,14 @@ nav{
 .vcard.pro:hover{box-shadow:0 16px 48px rgba(37,99,235,.2);}
 .vcard.biz:hover{box-shadow:0 16px 48px rgba(215,119,6,.2);}
 .vcard.corp:hover{box-shadow:0 16px 48px rgba(147,51,234,.2);}
+.vcard.edu:hover{box-shadow:0 16px 48px rgba(220,38,38,.2);}
 .vcard.corp{background:linear-gradient(135deg,rgba(107,33,168,.12),rgba(8,8,15,.6));}
 .vcard-glow{position:absolute;top:0;left:0;right:0;height:3px;border-radius:24px 24px 0 0;pointer-events:none;}
 .vcard.life .vcard-glow{background:linear-gradient(90deg,#059669,#34d399);}
 .vcard.pro  .vcard-glow{background:linear-gradient(90deg,#2563EB,#60a5fa);}
 .vcard.biz  .vcard-glow{background:linear-gradient(90deg,#D97706,#fbbf24);}
 .vcard.corp .vcard-glow{background:linear-gradient(90deg,#9333EA,#c084fc);}
+.vcard.edu  .vcard-glow{background:linear-gradient(90deg,#DC2626,#f87171);}
 .vcard-body{padding:1.75rem 1.75rem 1.5rem;}
 .vcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;}
 .vcard-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
@@ -114,6 +117,7 @@ nav{
 .vcard.pro  .vcard-icon{background:rgba(37,99,235,.2);}
 .vcard.biz  .vcard-icon{background:rgba(215,119,6,.2);}
 .vcard.corp .vcard-icon{background:rgba(147,51,234,.2);}
+.vcard.edu  .vcard-icon{background:rgba(220,38,38,.2);}
 .vtag{font-size:.68rem;font-weight:600;padding:.22rem .55rem;border-radius:6px;letter-spacing:.04em;white-space:nowrap;}
 .vtag.free{background:rgba(5,150,105,.15);color:#6ee7b7;}
 .vtag.ent{background:rgba(147,51,234,.15);color:#d8b4fe;}
@@ -122,6 +126,7 @@ nav{
 .vcard.pro  .vcard-name span{color:#60a5fa;}
 .vcard.biz  .vcard-name span{color:#fbbf24;}
 .vcard.corp .vcard-name span{color:#c084fc;}
+.vcard.edu  .vcard-name span{color:#f87171;}
 .vcard-url{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:500;margin-bottom:.9rem;}
 .vcard-headline{color:rgba(255,255,255,.75);font-size:.93rem;line-height:1.6;margin-bottom:1.25rem;}
 .vcard-features{list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.35rem;}
@@ -131,6 +136,7 @@ nav{
 .vcard.pro  .vcard-features li::before{background:#60a5fa;}
 .vcard.biz  .vcard-features li::before{background:#fbbf24;}
 .vcard.corp .vcard-features li::before{background:#c084fc;}
+.vcard.edu  .vcard-features li::before{background:#f87171;}
 .vcard-audience{display:inline-flex;align-items:center;gap:.4rem;font-size:.76rem;color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.07);padding-top:.9rem;margin-bottom:1.25rem;width:100%;}
 .vcard-audience svg{opacity:.4;}
 .vcard-actions{display:flex;flex-direction:column;gap:.6rem;}
@@ -157,6 +163,8 @@ nav{
 .vcard.biz  .btn-main:hover{background:var(--biz2);}
 .vcard.corp .btn-main{background:var(--corp);}
 .vcard.corp .btn-main:hover{background:var(--corp2);}
+.vcard.edu  .btn-main{background:var(--edu);}
+.vcard.edu  .btn-main:hover{background:var(--edu2);}
 .btn-sec{color:rgba(255,255,255,.7);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);transition:all .2s;}
 .btn-sec:hover{background:rgba(255,255,255,.12);color:#fff;}
 
@@ -294,33 +302,6 @@ footer p{color:#334155;font-size:.78rem;}
       </div>
     </div>
 
-    <div class="vcard biz">
-      <div class="vcard-glow"></div>
-      <div class="vcard-body">
-        <div class="vcard-top">
-          <div class="vcard-icon">🚀</div>
-          <div class="vcard-tags"><span class="vtag free">Free</span></div>
-        </div>
-        <div class="vcard-name">WhatIDid <span>Biz</span></div>
-        <div class="vcard-url">biz.whatidid.app</div>
-        <p class="vcard-headline" data-i18n="biz_headline">The experience network for entrepreneurs and business owners.</p>
-        <ul class="vcard-features">
-          <li data-i18n="biz_f1">Explore real experiences from entrepreneurs and business owners</li>
-          <li data-i18n="biz_f2">Share what worked — and what didn't — building and running your business</li>
-          <li data-i18n="biz_f3">Learn from others facing the same challenges you are</li>
-          <li data-i18n="biz_f4">Grow your business through collective entrepreneurial intelligence</li>
-        </ul>
-        <div class="vcard-audience">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span data-i18n="biz_audience">For entrepreneurs, founders &amp; business owners</span>
-        </div>
-        <div class="vcard-actions">
-          <a href="#" class="btn-sec btn-soon" onclick="return false;" data-i18n="btn_explore_public">Explore Public</a>
-          <a href="#" class="btn-main btn-soon" onclick="return false;" data-i18n="btn_create_signin">Create Group / Sign In</a>
-        </div>
-      </div>
-    </div>
-
     <div class="vcard pro">
       <div class="vcard-glow"></div>
       <div class="vcard-body">
@@ -340,6 +321,60 @@ footer p{color:#334155;font-size:.78rem;}
         <div class="vcard-audience">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
           <span data-i18n="pro_audience">For professionals, recruiters &amp; talent groups</span>
+        </div>
+        <div class="vcard-actions">
+          <a href="#" class="btn-sec btn-soon" onclick="return false;" data-i18n="btn_explore_public">Explore Public</a>
+          <a href="#" class="btn-main btn-soon" onclick="return false;" data-i18n="btn_create_signin">Create Group / Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="vcard edu">
+      <div class="vcard-glow"></div>
+      <div class="vcard-body">
+        <div class="vcard-top">
+          <div class="vcard-icon">🎓</div>
+          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+        </div>
+        <div class="vcard-name">WhatIDid <span>Edu</span></div>
+        <div class="vcard-url">edu.whatidid.app</div>
+        <p class="vcard-headline" data-i18n="edu_headline">Turn business cases into interactive classroom discussions.</p>
+        <ul class="vcard-features">
+          <li data-i18n="edu_f1">Present real business cases and lead structured discussions with your class</li>
+          <li data-i18n="edu_f2">Students explore Common Cases and share their own related experiences</li>
+          <li data-i18n="edu_f3">Built on the same PAR Model — Problem, Action, Result</li>
+          <li data-i18n="edu_f4">Create a class group in minutes — no setup required</li>
+        </ul>
+        <div class="vcard-audience">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg>
+          <span data-i18n="edu_audience">For professors, instructors &amp; their classes</span>
+        </div>
+        <div class="vcard-actions">
+          <a href="#" class="btn-sec btn-soon" onclick="return false;" data-i18n="btn_explore_public">Explore Public</a>
+          <a href="#" class="btn-main btn-soon" onclick="return false;" data-i18n="btn_create_signin">Create Group / Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="vcard biz">
+      <div class="vcard-glow"></div>
+      <div class="vcard-body">
+        <div class="vcard-top">
+          <div class="vcard-icon">🚀</div>
+          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+        </div>
+        <div class="vcard-name">WhatIDid <span>Biz</span></div>
+        <div class="vcard-url">biz.whatidid.app</div>
+        <p class="vcard-headline" data-i18n="biz_headline">The experience network for entrepreneurs and business owners.</p>
+        <ul class="vcard-features">
+          <li data-i18n="biz_f1">Explore real experiences from entrepreneurs and business owners</li>
+          <li data-i18n="biz_f2">Share what worked — and what didn't — building and running your business</li>
+          <li data-i18n="biz_f3">Learn from others facing the same challenges you are</li>
+          <li data-i18n="biz_f4">Grow your business through collective entrepreneurial intelligence</li>
+        </ul>
+        <div class="vcard-audience">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i18n="biz_audience">For entrepreneurs, founders &amp; business owners</span>
         </div>
         <div class="vcard-actions">
           <a href="#" class="btn-sec btn-soon" onclick="return false;" data-i18n="btn_explore_public">Explore Public</a>
@@ -545,6 +580,12 @@ en: {
   pro_f3: "Create groups for professionals around shared career challenges",
   pro_f4: "Grow your career through peer professional intelligence",
   pro_audience: "For professionals, recruiters &amp; talent groups",
+  edu_headline: "Turn business cases into interactive discussions for your business school classroom.",
+  edu_f1: "Present real business cases and lead structured discussions with your business school class",
+  edu_f2: "Students explore Common Cases and share their own related experiences",
+  edu_f3: "Built on the same PAR Model — Problem, Action, Result",
+  edu_f4: "Create a class group in minutes — no setup required",
+  edu_audience: "For business school professors &amp; their students",
   biz_headline: "The experience network for entrepreneurs and business owners.",
   biz_f1: "Explore real experiences from entrepreneurs and business owners",
   biz_f2: "Share what worked — and what didn't — building and running your business",
@@ -599,6 +640,12 @@ es: {
   pro_f3: "Crea grupos para profesionales en torno a desafíos de carrera compartidos",
   pro_f4: "Impulsa tu carrera a través de la inteligencia profesional colectiva",
   pro_audience: "Para profesionales, reclutadores y grupos de talento",
+  edu_headline: "Convierte business cases en discusiones interactivas para tu escuela de negocios.",
+  edu_f1: "Presenta business cases reales y lidera discusiones estructuradas con tu clase de escuela de negocios",
+  edu_f2: "Los estudiantes exploran Common Cases y comparten sus propias experiencias relacionadas",
+  edu_f3: "Basado en el mismo Modelo PAR — Problema, Acción, Resultado",
+  edu_f4: "Crea un grupo de clase en minutos — sin necesidad de configuración",
+  edu_audience: "Para profesores de escuelas de negocios y sus estudiantes",
   biz_headline: "La red de experiencias para emprendedores y dueños de negocios.",
   biz_f1: "Explora experiencias reales de emprendedores y dueños de negocios",
   biz_f2: "Comparte qué funcionó — y qué no — al construir y dirigir tu negocio",
@@ -653,6 +700,12 @@ pt: {
   pro_f3: "Crie grupos para profissionais em torno de desafios de carreira compartilhados",
   pro_f4: "Impulsione sua carreira através da inteligência profissional coletiva",
   pro_audience: "Para profissionais, recrutadores e grupos de talentos",
+  edu_headline: "Transforme business cases em discussões interativas para sua escola de negócios.",
+  edu_f1: "Apresente business cases reais e conduza discussões estruturadas com sua turma de escola de negócios",
+  edu_f2: "Alunos exploram Common Cases e compartilham suas próprias experiências relacionadas",
+  edu_f3: "Baseado no mesmo Modelo PAR — Problema, Ação, Resultado",
+  edu_f4: "Crie um grupo de turma em minutos — sem necessidade de configuração",
+  edu_audience: "Para professores de escolas de negócios e seus alunos",
   biz_headline: "A rede de experiências para empreendedores e donos de negócio.",
   biz_f1: "Explore experiências reais de empreendedores e donos de negócio",
   biz_f2: "Compartilhe o que funcionou — e o que não funcionou — ao construir e gerir seu negócio",
@@ -707,6 +760,12 @@ zh: {
   pro_f3: "围绕共同的职业挑战创建专业人士群组",
   pro_f4: "通过同行的职业智慧推动自己的职业发展",
   pro_audience: "适合职场人士、招聘人员及人才群组",
+  edu_headline: "把商业案例变成商学院课堂的互动讨论。",
+  edu_f1: "展示真实商业案例，与你的商学院班级进行结构化讨论",
+  edu_f2: "学生探索通用案例，并分享自己的相关经验",
+  edu_f3: "基于同样的PAR模型——问题、行动、结果",
+  edu_f4: "几分钟内创建班级群组——无需设置",
+  edu_audience: "适合商学院教授及其学生",
   biz_headline: "面向创业者和企业主的经验网络。",
   biz_f1: "浏览创业者和企业主的真实经验",
   biz_f2: "分享创业和经营过程中什么方法有效、什么没用",
