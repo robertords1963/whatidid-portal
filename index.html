@@ -78,6 +78,13 @@ nav{
   background:rgba(147,51,234,.2);border:1px solid rgba(147,51,234,.4);
   border-radius:12px;padding:.75rem 1.5rem;
   font-family:"Sora",sans-serif;font-weight:700;color:#fcd34d;font-size:.92rem;margin-bottom:.75rem;
+  white-space:nowrap;
+}
+.free-text-crossed{position:relative;color:rgba(255,255,255,.35);font-weight:600;font-size:.92rem;font-family:"Sora",sans-serif;}
+.free-text-standalone{margin-bottom:1rem;}
+.free-text-crossed::after{
+  content:"✕";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);color:#f87171;font-size:1.5em;font-weight:900;
 }
 .hero-tagline{color:rgba(255,255,255,.4);font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
 .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;pointer-events:none;}
@@ -254,7 +261,8 @@ footer p{color:#334155;font-size:.78rem;}
     <div class="hero-badge"><span class="hero-badge-dot"></span><span data-i18n="hero_badge">Real problems. Real actions. Real results.</span></div>
     <h1><span data-i18n="hero_h1_l1">Building</span><br><span class="grad" data-i18n="hero_h1_l2">collective intelligence.</span></h1>
     <p class="hero-sub" data-i18n="hero_sub">WhatIDid is a result-oriented, feedback-driven experiential platform enabling continuous improvement through a structured and iterative learning cycle.<br><br>Like any network, WhatIDid connects people. The difference is that experiences are captured in a structured way, making it easier for individuals, teams, and organizations to learn from each other and continuously improve.</p>
-    <div class="hero-formula"><span data-i18n="formula_problem">Problem</span> <span style="color:rgba(255,255,255,.4)">→</span> <span data-i18n="formula_action">Action</span> <span style="color:rgba(255,255,255,.4)">→</span> <span data-i18n="formula_result">Result</span></div>
+    <div class="free-text-crossed free-text-standalone" data-i18n="free_text_label">Free Text</div>
+    <div class="hero-formula"><span data-i18n="formula_par_prefix">PAR :</span> <span data-i18n="formula_problem">Problem</span> <span style="color:rgba(255,255,255,.4)">→</span> <span data-i18n="formula_action">Action</span> <span style="color:rgba(255,255,255,.4)">→</span> <span data-i18n="formula_result">Result</span></div>
     <p class="hero-tagline" data-i18n="hero_tagline">Choose your version below</p>
   </div>
   <div class="scroll-hint"><span data-i18n="scroll_explore">Explore</span><div class="scroll-arrow"></div></div>
@@ -546,10 +554,11 @@ en: {
   hero_h1_l1: "Building", hero_h1_l2: "collective intelligence.",
   hero_sub: "WhatIDid is a result-oriented, feedback-driven experiential platform enabling continuous improvement through a structured and iterative learning cycle.<br><br>Like any network, WhatIDid connects people. The difference is that experiences are captured in a structured way, making it easier for individuals, teams, and organizations to learn from each other and continuously improve.",
   formula_problem: "Problem", formula_action: "Action", formula_result: "Result",
-  hero_tagline: "Choose your version below",
+  formula_par_prefix: "PAR :", free_text_label: "Free Text",
+  hero_tagline: "Choose your edition below",
   scroll_explore: "Explore",
-  versions_label: "Versions",
-  versions_h2: "Choose your version",
+  versions_label: "Editions",
+  versions_h2: "Choose your edition",
   versions_p: "Same network, same format — different contexts. All free to explore and use.",
   coming_soon: "Coming Soon",
   btn_explore_public: "Explore Public",
@@ -606,10 +615,11 @@ es: {
   hero_h1_l1: "Construyendo", hero_h1_l2: "inteligencia colectiva.",
   hero_sub: "WhatIDid es una plataforma experiencial orientada a resultados e impulsada por retroalimentación, que permite la mejora continua a través de un ciclo de aprendizaje estructurado e iterativo.<br><br>Como cualquier red, WhatIDid conecta personas. La diferencia es que las experiencias se capturan de forma estructurada, facilitando que individuos, equipos y organizaciones aprendan entre sí y mejoren continuamente.",
   formula_problem: "Problema", formula_action: "Acción", formula_result: "Resultado",
-  hero_tagline: "Elige tu versión abajo",
+  formula_par_prefix: "PAR :", free_text_label: "Texto Libre",
+  hero_tagline: "Elige tu edición abajo",
   scroll_explore: "Explorar",
-  versions_label: "Versiones",
-  versions_h2: "Elige tu versión",
+  versions_label: "Ediciones",
+  versions_h2: "Elige tu edición",
   versions_p: "Misma red, mismo formato — diferentes contextos. Todas gratis para explorar y usar.",
   coming_soon: "Próximamente",
   btn_explore_public: "Explorar Público",
@@ -666,10 +676,11 @@ pt: {
   hero_h1_l1: "Construindo", hero_h1_l2: "inteligência coletiva.",
   hero_sub: "O WhatIDid é uma plataforma experiencial orientada a resultados e movida por feedback, que possibilita a melhoria contínua através de um ciclo de aprendizado estruturado e iterativo.<br><br>Como qualquer rede, o WhatIDid conecta pessoas. A diferença é que as experiências são capturadas de forma estruturada, facilitando que indivíduos, equipes e organizações aprendam uns com os outros e melhorem continuamente.",
   formula_problem: "Problema", formula_action: "Ação", formula_result: "Resultado",
-  hero_tagline: "Escolha sua versão abaixo",
+  formula_par_prefix: "PAR :", free_text_label: "Texto Livre",
+  hero_tagline: "Escolha sua edição abaixo",
   scroll_explore: "Explorar",
-  versions_label: "Versões",
-  versions_h2: "Escolha sua versão",
+  versions_label: "Edições",
+  versions_h2: "Escolha sua edição",
   versions_p: "Mesma rede, mesmo formato — contextos diferentes. Todas gratuitas para explorar e usar.",
   coming_soon: "Em Breve",
   btn_explore_public: "Explorar Público",
@@ -726,6 +737,7 @@ zh: {
   hero_h1_l1: "构建", hero_h1_l2: "集体智慧。",
   hero_sub: "WhatIDid 是一个以成果为导向、由反馈驱动的经验平台，通过结构化、迭代式的学习循环推动持续改进。<br><br>和其他社交网络一样，WhatIDid 连接人与人。不同之处在于，经验以结构化的方式被记录下来，让个人、团队和组织更容易相互学习、持续进步。",
   formula_problem: "问题", formula_action: "行动", formula_result: "结果",
+  formula_par_prefix: "PAR：", free_text_label: "自由文本",
   hero_tagline: "在下方选择您的版本",
   scroll_explore: "探索",
   versions_label: "版本",
