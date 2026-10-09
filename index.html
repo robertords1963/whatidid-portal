@@ -13,6 +13,7 @@
   --biz:#D97706;--biz2:#B45309;
   --corp:#9333EA;--corp2:#7C3AED;
   --edu:#DC2626;--edu2:#B91C1C;
+  --retail:#0891B2;--retail2:#0E7490;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -110,6 +111,7 @@ nav{
 .vcard.biz:hover{box-shadow:0 16px 48px rgba(215,119,6,.2);}
 .vcard.corp:hover{box-shadow:0 16px 48px rgba(147,51,234,.2);}
 .vcard.edu:hover{box-shadow:0 16px 48px rgba(220,38,38,.2);}
+.vcard.retail:hover{box-shadow:0 16px 48px rgba(8,145,178,.2);}
 .vcard.corp{background:linear-gradient(135deg,rgba(107,33,168,.12),rgba(8,8,15,.6));}
 .vcard-glow{position:absolute;top:0;left:0;right:0;height:3px;border-radius:24px 24px 0 0;pointer-events:none;}
 .vcard.life .vcard-glow{background:linear-gradient(90deg,#059669,#34d399);}
@@ -117,6 +119,7 @@ nav{
 .vcard.biz  .vcard-glow{background:linear-gradient(90deg,#D97706,#fbbf24);}
 .vcard.corp .vcard-glow{background:linear-gradient(90deg,#9333EA,#c084fc);}
 .vcard.edu  .vcard-glow{background:linear-gradient(90deg,#DC2626,#f87171);}
+.vcard.retail .vcard-glow{background:linear-gradient(90deg,#0891B2,#22d3ee);}
 .vcard-body{padding:1.75rem 1.75rem 1.5rem;}
 .vcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;}
 .vcard-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
@@ -125,6 +128,7 @@ nav{
 .vcard.biz  .vcard-icon{background:rgba(215,119,6,.2);}
 .vcard.corp .vcard-icon{background:rgba(147,51,234,.2);}
 .vcard.edu  .vcard-icon{background:rgba(220,38,38,.2);}
+.vcard.retail .vcard-icon{background:rgba(8,145,178,.2);}
 .vtag{font-size:.68rem;font-weight:600;padding:.22rem .55rem;border-radius:6px;letter-spacing:.04em;white-space:nowrap;}
 .vtag.free{background:rgba(5,150,105,.15);color:#6ee7b7;}
 .vtag.ent{background:rgba(147,51,234,.15);color:#d8b4fe;}
@@ -134,6 +138,7 @@ nav{
 .vcard.biz  .vcard-name span{color:#fbbf24;}
 .vcard.corp .vcard-name span{color:#c084fc;}
 .vcard.edu  .vcard-name span{color:#f87171;}
+.vcard.retail .vcard-name span{color:#22d3ee;}
 .vcard-url{font-size:.78rem;color:rgba(255,255,255,.3);font-weight:500;margin-bottom:.9rem;}
 .vcard-headline{color:rgba(255,255,255,.75);font-size:.93rem;line-height:1.6;margin-bottom:1.25rem;}
 .vcard-features{list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.35rem;}
@@ -144,6 +149,7 @@ nav{
 .vcard.biz  .vcard-features li::before{background:#fbbf24;}
 .vcard.corp .vcard-features li::before{background:#c084fc;}
 .vcard.edu  .vcard-features li::before{background:#f87171;}
+.vcard.retail .vcard-features li::before{background:#22d3ee;}
 .vcard-audience{display:inline-flex;align-items:center;gap:.4rem;font-size:.76rem;color:rgba(255,255,255,.35);border-top:1px solid rgba(255,255,255,.07);padding-top:.9rem;margin-bottom:1.25rem;width:100%;}
 .vcard-audience svg{opacity:.4;}
 .vcard-actions{display:flex;flex-direction:column;gap:.6rem;}
@@ -172,6 +178,8 @@ nav{
 .vcard.corp .btn-main:hover{background:var(--corp2);}
 .vcard.edu  .btn-main{background:var(--edu);}
 .vcard.edu  .btn-main:hover{background:var(--edu2);}
+.vcard.retail .btn-main{background:var(--retail);}
+.vcard.retail .btn-main:hover{background:var(--retail2);}
 .btn-sec{color:rgba(255,255,255,.7);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);transition:all .2s;}
 .btn-sec:hover{background:rgba(255,255,255,.12);color:#fff;}
 
@@ -272,7 +280,7 @@ footer p{color:#334155;font-size:.78rem;}
   <div class="versions-header">
     <div class="versions-label" data-i18n="versions_label">Versions</div>
     <h2 data-i18n="versions_h2">Choose your version</h2>
-    <p data-i18n="versions_p">Same network, same format — different contexts. All free to explore and use.</p>
+    <p data-i18n="versions_p">Same network, same format — different contexts.</p>
   </div>
   <div class="vgrid">
 
@@ -299,7 +307,7 @@ footer p{color:#334155;font-size:.78rem;}
         <a href="https://intro.corp.whatidid.app" target="_blank" class="vcard-learn-more" data-i18n="corp_learn_more">Learn more about Corp →</a>
         <div class="vcard-actions">
           <a href="https://corp.whatidid.app" class="btn-sec" data-i18n="btn_signin">Sign In</a>
-          <button class="btn-main" id="demoBtn" data-i18n="btn_request_demo">Request Demo</button>
+          <button class="btn-main demo-btn" id="demoBtn" data-edition="Corp" data-i18n="btn_request_demo">Request Demo</button>
         </div>
       </div>
     </div>
@@ -309,7 +317,7 @@ footer p{color:#334155;font-size:.78rem;}
       <div class="vcard-body">
         <div class="vcard-top">
           <div class="vcard-icon">💼</div>
-          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+          <div class="vcard-tags"></div>
         </div>
         <div class="vcard-name">WhatIDid <span>Pro</span></div>
         <div class="vcard-url">pro.whatidid.app</div>
@@ -336,7 +344,7 @@ footer p{color:#334155;font-size:.78rem;}
       <div class="vcard-body">
         <div class="vcard-top">
           <div class="vcard-icon">🎓</div>
-          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+          <div class="vcard-tags"></div>
         </div>
         <div class="vcard-name">WhatIDid <span>Edu</span></div>
         <div class="vcard-url">edu.whatidid.app</div>
@@ -363,7 +371,7 @@ footer p{color:#334155;font-size:.78rem;}
       <div class="vcard-body">
         <div class="vcard-top">
           <div class="vcard-icon">🚀</div>
-          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+          <div class="vcard-tags"></div>
         </div>
         <div class="vcard-name">WhatIDid <span>Biz</span></div>
         <div class="vcard-url">biz.whatidid.app</div>
@@ -385,12 +393,38 @@ footer p{color:#334155;font-size:.78rem;}
       </div>
     </div>
 
+    <div class="vcard retail">
+      <div class="vcard-glow"></div>
+      <div class="vcard-body">
+        <div class="vcard-top">
+          <div class="vcard-icon">🛍️</div>
+          <div class="vcard-tags"><span class="vtag ent">Enterprise</span></div>
+        </div>
+        <div class="vcard-name">WhatIDid <span>Retail</span></div>
+        <div class="vcard-url">retail.whatidid.app</div>
+        <p class="vcard-headline" data-i18n="retail_headline">Turn your customers' projects into shared experience that helps every shopper.</p>
+        <ul class="vcard-features">
+          <li data-i18n="retail_f1">Customers document their projects as Problem, Action, Result</li>
+          <li data-i18n="retail_f2">Experiences tied to the products used, so shoppers see real solutions</li>
+          <li data-i18n="retail_f3">Built on the PAR Model — the same format as every WhatIDid edition</li>
+          <li data-i18n="retail_f4">A branded space on your site for customer project experiences</li>
+        </ul>
+        <div class="vcard-audience">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span data-i18n="retail_audience">For retailers &amp; brands serving DIY and project-minded customers · via partnership</span>
+        </div>
+        <div class="vcard-actions">
+          <button type="button" class="btn-main btn-soon" onclick="return false;" data-i18n="btn_request_demo">Request Demo</button>
+        </div>
+      </div>
+    </div>
+
     <div class="vcard life">
       <div class="vcard-glow"></div>
       <div class="vcard-body">
         <div class="vcard-top">
           <div class="vcard-icon">🌱</div>
-          <div class="vcard-tags"><span class="vtag free">Free</span></div>
+          <div class="vcard-tags"></div>
         </div>
         <div class="vcard-name">WhatIDid <span>Life</span></div>
         <div class="vcard-url">life.whatidid.app</div>
@@ -449,6 +483,7 @@ footer p{color:#334155;font-size:.78rem;}
     <p data-i18n="modal_p">Fill in your details and we'll be in touch within 24 hours.</p>
     <div id="modalForm">
       <form id="demoForm" action="https://formspree.io/f/xeevdaeo" method="POST">
+        <input type="hidden" name="edition" id="ph_edition" value="Corp"/>
         <label data-i18n="modal_name">Full Name *</label>
         <input type="text" name="name" required id="ph_name"/>
         <label data-i18n="modal_email">Work Email *</label>
@@ -469,7 +504,8 @@ footer p{color:#334155;font-size:.78rem;}
 </div>
 
 <script>
-function openModal(){
+function openModal(ed){
+  document.getElementById('ph_edition').value = ed || 'Corp';
   document.getElementById('demoModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -481,13 +517,14 @@ function closeModal(){
 }
 
 // Demo button — all event types for maximum mobile compatibility
-var demoBtn = document.getElementById('demoBtn');
-['click','touchstart'].forEach(function(evt){
-  demoBtn.addEventListener(evt, function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    openModal();
-  }, {passive:false});
+document.querySelectorAll('.demo-btn').forEach(function(demoBtn){
+  ['click','touchstart'].forEach(function(evt){
+    demoBtn.addEventListener(evt, function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openModal(demoBtn.getAttribute('data-edition'));
+    }, {passive:false});
+  });
 });
 
 // Close button
@@ -559,7 +596,7 @@ en: {
   scroll_explore: "Explore",
   versions_label: "Editions",
   versions_h2: "Choose your edition",
-  versions_p: "Same network, same format — different contexts. All free to explore and use.",
+  versions_p: "Same network, same format — different contexts.",
   coming_soon: "Coming Soon",
   btn_explore_public: "Explore Public",
   btn_create_signin: "Create Group / Sign In",
@@ -570,32 +607,38 @@ en: {
   life_f2: "Document your own life lessons — what worked and what didn't",
   life_f3: "Create or join groups around shared life experiences",
   life_f4: "Grow through collective personal wisdom",
-  life_audience: "For individuals &amp; personal groups",
+  life_audience: "For individuals & personal groups",
   pro_headline: "Professional experiences. Career intelligence.",
   pro_f1: "Explore real professional experiences across industries and roles",
   pro_f2: "Recruiters build curated talent pools based on real experiences",
   pro_f3: "Create groups for professionals around shared career challenges",
   pro_f4: "Grow your career through peer professional intelligence",
-  pro_audience: "For professionals, recruiters &amp; talent groups",
+  pro_audience: "For professionals, recruiters & talent groups",
   edu_headline: "Turn business cases into interactive discussions for your business school classroom.",
   edu_f1: "Present real business cases and lead structured discussions with your business school class",
   edu_f2: "Students explore Common Cases and share their own related experiences",
   edu_f3: "Built on the same PAR Model — Problem, Action, Result",
   edu_f4: "Create a class group in minutes — no setup required",
-  edu_audience: "For business school professors &amp; their students",
+  edu_audience: "For business school professors & their students",
   biz_headline: "The experience network for entrepreneurs and business owners.",
   biz_f1: "Explore real experiences from entrepreneurs and business owners",
   biz_f2: "Share what worked — and what didn't — building and running your business",
   biz_f3: "Learn from others facing the same challenges you are",
   biz_f4: "Grow your business through collective entrepreneurial intelligence",
-  biz_audience: "For entrepreneurs, founders &amp; business owners",
+  biz_audience: "For entrepreneurs, founders & business owners",
   corp_headline: "Turn your employees' experiences into collective organizational intelligence.",
   corp_f1: "Private platform exclusively for your employees",
   corp_f2: "Built on the PAR Model — a structured methodology for organizational learning",
   corp_f3: "Custom categories, branding, and admin controls",
-  corp_f4: "Strategic insights &amp; analytics for leadership",
+  corp_f4: "Strategic insights & analytics for leadership",
   corp_audience: "For enterprises · employees only · via contract",
   corp_learn_more: "Learn more about Corp →",
+  retail_headline: "Turn your customers' projects into shared experience that helps every shopper.",
+  retail_f1: "Customers document their projects as Problem, Action, Result",
+  retail_f2: "Experiences tied to the products used, so shoppers see real solutions",
+  retail_f3: "Built on the PAR Model — the same format as every WhatIDid edition",
+  retail_f4: "A branded space on your site for customer project experiences",
+  retail_audience: "For retailers & brands serving DIY and project-minded customers · via partnership",
   strip_h2: "One format. Every experience.",
   strip_p: "Across all versions, every experience follows the same simple, powerful structure — the PAR Approach: Problem, Action, and Result — making knowledge easy to share, search, and learn from.",
   footer_corp: "Corp", footer_contact: "Contact",
@@ -620,7 +663,7 @@ es: {
   scroll_explore: "Explorar",
   versions_label: "Ediciones",
   versions_h2: "Elige tu edición",
-  versions_p: "Misma red, mismo formato — diferentes contextos. Todas gratis para explorar y usar.",
+  versions_p: "Misma red, mismo formato — diferentes contextos.",
   coming_soon: "Próximamente",
   btn_explore_public: "Explorar Público",
   btn_create_signin: "Crear Grupo / Iniciar Sesión",
@@ -657,6 +700,12 @@ es: {
   corp_f4: "Insights estratégicos y analítica para el liderazgo",
   corp_audience: "Para empresas · solo empleados · mediante contrato",
   corp_learn_more: "Más información sobre Corp →",
+  retail_headline: "Convierte los proyectos de tus clientes en experiencia compartida que ayuda a cada comprador.",
+  retail_f1: "Los clientes documentan sus proyectos como Problema, Acción y Resultado",
+  retail_f2: "Experiencias vinculadas a los productos utilizados, para que los compradores vean soluciones reales",
+  retail_f3: "Basado en el Modelo PAR: el mismo formato de todas las ediciones de WhatIDid",
+  retail_f4: "Un espacio con tu marca en tu sitio para las experiencias de proyectos de los clientes",
+  retail_audience: "Para minoristas y marcas que atienden a clientes de proyectos y bricolaje · mediante alianza",
   strip_h2: "Un formato. Cualquier experiencia.",
   strip_p: "En todas las versiones, cada experiencia sigue la misma estructura simple y poderosa — el Enfoque PAR: Problema, Acción y Resultado — facilitando compartir, buscar y aprender del conocimiento.",
   footer_corp: "Corp", footer_contact: "Contacto",
@@ -681,7 +730,7 @@ pt: {
   scroll_explore: "Explorar",
   versions_label: "Edições",
   versions_h2: "Escolha sua edição",
-  versions_p: "Mesma rede, mesmo formato — contextos diferentes. Todas gratuitas para explorar e usar.",
+  versions_p: "Mesma rede, mesmo formato — contextos diferentes.",
   coming_soon: "Em Breve",
   btn_explore_public: "Explorar Público",
   btn_create_signin: "Criar Grupo / Entrar",
@@ -718,6 +767,12 @@ pt: {
   corp_f4: "Insights estratégicos e análises para a liderança",
   corp_audience: "Para empresas · somente funcionários · mediante contrato",
   corp_learn_more: "Saiba mais sobre o Corp →",
+  retail_headline: "Transforme os projetos dos seus clientes em experiência compartilhada que ajuda cada comprador.",
+  retail_f1: "Os clientes documentam seus projetos como Problema, Ação e Resultado",
+  retail_f2: "Experiências ligadas aos produtos usados, para que os compradores vejam soluções reais",
+  retail_f3: "Baseado no Modelo PAR — o mesmo formato de todas as edições do WhatIDid",
+  retail_f4: "Um espaço com a sua marca no seu site para as experiências de projetos dos clientes",
+  retail_audience: "Para varejistas e marcas que atendem clientes de projetos e faça-você-mesmo · via parceria",
   strip_h2: "Um formato. Qualquer experiência.",
   strip_p: "Em todas as versões, cada experiência segue a mesma estrutura simples e poderosa — a Abordagem PAR: Problema, Ação e Resultado — facilitando compartilhar, buscar e aprender com o conhecimento.",
   footer_corp: "Corp", footer_contact: "Contato",
@@ -742,7 +797,7 @@ zh: {
   scroll_explore: "探索",
   versions_label: "版本",
   versions_h2: "选择您的版本",
-  versions_p: "同一个网络，同样的格式——不同的场景。全部免费探索和使用。",
+  versions_p: "同一个网络，同样的格式——不同的场景。",
   coming_soon: "即将上线",
   btn_explore_public: "浏览公开内容",
   btn_create_signin: "创建群组 / 登录",
@@ -779,6 +834,12 @@ zh: {
   corp_f4: "面向管理层的战略洞察与数据分析",
   corp_audience: "面向企业 · 仅限员工 · 通过合同开通",
   corp_learn_more: "了解更多关于 Corp 的信息 →",
+  retail_headline: "把客户的项目变成共享经验，帮助每一位购物者。",
+  retail_f1: "客户以“问题、行动、结果”的方式记录自己的项目",
+  retail_f2: "经验与所用产品关联，让购物者看到真实的解决方案",
+  retail_f3: "基于 PAR 模型——与 WhatIDid 所有版本相同的格式",
+  retail_f4: "在您的网站上设立带有您品牌的客户项目经验专区",
+  retail_audience: "适合服务于DIY及项目型客户的零售商和品牌 · 通过合作",
   strip_h2: "统一的格式，适用于任何经验。",
   strip_p: "在所有版本中，每一条经验都遵循同样简单而强大的结构——PAR 方法：问题、行动、结果——让知识更容易分享、检索和学习。",
   footer_corp: "Corp", footer_contact: "联系我们",
